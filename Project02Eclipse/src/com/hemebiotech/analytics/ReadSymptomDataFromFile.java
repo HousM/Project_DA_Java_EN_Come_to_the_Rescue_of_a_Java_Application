@@ -9,7 +9,6 @@ import java.io.FileReader;
 .. *********/
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**********************************/
 /**
@@ -33,33 +32,39 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 		this.filepath = filepath;
 	}
 
-	public List<String> GetSymptoms() {
+	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
-		while (true) {
-			if (filepath != null) {
-				try {
-					BufferedReader reader = new BufferedReader(new FileReader(filepath));
-					String line = reader.readLine();
+		BufferedReader reader = null;
 
-					while (line != null) {
-						result.add(line);
-						line = reader.readLine();
+		if (filepath != null) {
+			try {
+				reader = new BufferedReader(new FileReader(filepath));
+				String line = reader.readLine();
+
+				while (line != null) {
+					result.add(line);
+					line = reader.readLine();
+				}
+				reader.close();
+
+			} catch (Exception e) {
+				e.printStackTrace();
+
+			} finally {
+
+				if (reader != null) {
+					try {
+
+						reader.close();
+
+					} catch (Exception e) {
+						e.printStackTrace();
 					}
-					reader.close();
-					break;
-				} catch (Exception e) {
-					System.out.println("Reading error. Start again ? ");
-					Scanner scan = new Scanner(System.in);
-					String response = scan.nextLine().trim();
-					if (response.equalsIgnoreCase("no")) {
-						break;
-					}
-					scan.close();
+
 				}
 			}
 		}
 
 		return result;
 	}
-
 }

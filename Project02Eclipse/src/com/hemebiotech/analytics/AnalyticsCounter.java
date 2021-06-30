@@ -23,21 +23,21 @@ public class AnalyticsCounter {
 	private Map<String, Integer> mapSym = new TreeMap<String, Integer>();// Symptom map sorted in alphabetical order
 
 	// Launching program
-	public void Launch_pg(String inputDoc) {
+	public void launch_pg(String inputDoc) {
 		this.inputDoc = inputDoc;
-		this.GetSymptoms();
+		this.getSymptoms();
 		this.mapCountTree();
 		this.writeResult();
 	}
 
 	// Read List of Symptoms
-	private void GetSymptoms() {
+	private void getSymptoms() {
 		ReadSymptomDataFromFile ReadSymptomDataFromFile = new ReadSymptomDataFromFile(inputDoc);
-		listSymptoms = ReadSymptomDataFromFile.GetSymptoms();
+		listSymptoms = ReadSymptomDataFromFile.getSymptoms();
 	}
 
 	// Count and tree occurrence
-	public Map<String, Integer> mapCountTree() {
+	private Map<String, Integer> mapCountTree() {
 		Map<String, Integer> mapCount = new TreeMap<String, Integer>();
 
 		for (String Symptom : listSymptoms) {
@@ -55,7 +55,7 @@ public class AnalyticsCounter {
 	}
 
 	// Writing and displaying result of analyze...
-	public void writeResult() {
+	private void writeResult() {
 
 		WriteSymptomFromData writerSymptom = new WriteSymptomFromData();
 		writerSymptom.writeResult(mapSym, listSymptoms);

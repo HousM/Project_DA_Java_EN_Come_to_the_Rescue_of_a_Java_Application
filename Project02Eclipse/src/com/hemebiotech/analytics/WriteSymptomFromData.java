@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
 import java.util.Map;
-import java.util.Scanner;
 
 public class WriteSymptomFromData implements ISymptomWriter {
 
@@ -19,47 +18,50 @@ public class WriteSymptomFromData implements ISymptomWriter {
 	 */
 
 	public void writeResult(Map<String, Integer> mapSymptom, List<String> symptoms) {
-		while (true) {
-			try {
+		FileWriter fw = null;
+		BufferedWriter writer = null;
 
-				File resultOut = new File("result.txt");
+		try {
 
-				/* create the file if it doesn't exist */
-				if (!resultOut.exists()) {
-					resultOut.createNewFile();
+			File resultOut = new File("result.txt");
+
+			/* create the file if it doesn't exist */
+			if (!resultOut.exists()) {
+				resultOut.createNewFile();
+			}
+
+			fw = new FileWriter(resultOut.getAbsoluteFile());
+			writer = new BufferedWriter(fw);
+
+			/* Display header */
+			writer.write(" The symptoms present are " + "\n");
+
+			/* Display result */
+			for (String key : mapSymptom.keySet()) {
+				System.out.println(key + " = " + mapSymptom.get(key)); // Display in Console
+				writer.write(key + " = " + mapSymptom.get(key) + "\n"); // Display in txtFile
+			}
+			writer.close();
+
+			/*
+			 * Prints the stack trace of the System.err instance ( useful for diagnosing
+			 * exceptions)
+			 */
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			if (writer != null) {
+				try {
+
+					writer.close();
+
+				} catch (Exception e) {
+					e.printStackTrace();
 				}
-
-				FileWriter fw = new FileWriter(resultOut.getAbsoluteFile());
-				BufferedWriter writer = new BufferedWriter(fw);
-
-				/* Display header */
-				writer.write(" The symptoms present are " + "\n");
-
-				/* Display result */
-				for (String key : mapSymptom.keySet()) {
-					System.out.println(key + " = " + mapSymptom.get(key)); // Display in Console
-					writer.write(key + " = " + mapSymptom.get(key) + "\n"); // Display in txtFile
-				}
-				writer.close();
-				break;
-
-				/*
-				 * Prints the stack trace of the System.err instance ( useful for diagnosing
-				 * exceptions)
-				 */
-			} catch (Exception e) {
-
-				System.out.println("Writing error. Start again ? ");
-				Scanner scan = new Scanner(System.in);
-				String response = scan.nextLine().trim();
-				if (response.equalsIgnoreCase("no")) {
-					break;
-				}
-				scan.close();
 
 			}
 
 		}
-
 	}
 }
