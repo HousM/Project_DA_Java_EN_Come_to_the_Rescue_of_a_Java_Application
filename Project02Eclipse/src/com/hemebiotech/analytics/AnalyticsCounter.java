@@ -56,6 +56,7 @@ public class AnalyticsCounter {
 
 	// Writing and displaying result of analyze...
 	public void writeResult() {
+
 		WriteSymptomFromData writerSymptom = new WriteSymptomFromData();
 		writerSymptom.writeResult(mapSym, listSymptoms);
 	}
