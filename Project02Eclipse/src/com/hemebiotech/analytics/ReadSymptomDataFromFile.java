@@ -13,7 +13,6 @@ import java.util.List;
 /**********************************/
 /**
  *
- *
  * Simple brute force implementation
  *
  */

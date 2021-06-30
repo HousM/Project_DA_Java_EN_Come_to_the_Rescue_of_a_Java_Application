@@ -9,6 +9,7 @@ import java.util.Map;
 public class WriteSymptomFromData implements ISymptomWriter {
 
 	/**
+	 * 
 	 *
 	 * Writing of symptoms in alphabetical order
 	 * 

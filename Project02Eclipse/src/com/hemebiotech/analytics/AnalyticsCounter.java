@@ -6,6 +6,7 @@ import java.util.Map; // import of the Map utility class to use
 import java.util.TreeMap; // import of the mapTree utility class to use
 
 /**
+ * 
  * Takes a list of symptoms and return map of symptoms with occurrence and
  * sorted by alphabetical order
  * 
