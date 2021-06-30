@@ -1,7 +1,6 @@
 package com.hemebiotech.analytics;
 
 /**
- * 
  * @author HousM
  */
 public class Launcher {

@@ -11,7 +11,6 @@ public class WriteSymptomFromData implements ISymptomWriter {
 
 	/**
 	 *
-	 *
 	 * Writing of symptoms in alphabetical order
 	 * 
 	 * @param mapSymptom : map of the symptoms in alphabetical order as well as

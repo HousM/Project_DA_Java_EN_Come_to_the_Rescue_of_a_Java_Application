@@ -13,7 +13,8 @@ import java.util.Scanner;
 
 /**********************************/
 /**
- * 
+ *
+ *
  * Simple brute force implementation
  *
  */
