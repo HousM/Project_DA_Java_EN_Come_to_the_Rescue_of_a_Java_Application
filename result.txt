@@ -1,4 +1,4 @@
- The symptoms present are 
+The symptoms present are : 
 anxiety = 5
 arrhythmias = 3
 blindness = 1

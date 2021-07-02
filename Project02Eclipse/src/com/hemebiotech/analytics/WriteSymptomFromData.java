@@ -54,7 +54,6 @@ public class WriteSymptomFromData implements ISymptomWriter {
 
 			if (writer != null) {
 				try {
-
 					writer.close();
 
 				} catch (Exception e) {

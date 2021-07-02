@@ -20,7 +20,6 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	private String filepath;
 
 	/**
-	 * 
 	 * @Param : File-path a full or partial path to file with symptom strings in it,
 	 *        one per line
 	 * @result : All not empty rows from a table read

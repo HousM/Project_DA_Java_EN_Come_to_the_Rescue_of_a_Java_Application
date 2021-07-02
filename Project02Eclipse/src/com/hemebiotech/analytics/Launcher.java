@@ -7,8 +7,8 @@ public class Launcher {
 
 	public static void main(String args[]) throws Exception {
 
-		AnalyticsCounter AnalyticsCounter = new AnalyticsCounter();
-		AnalyticsCounter.launch_pg("Project02Eclipse/symptoms.txt");
+		AnalyticsCounter analyticsCounter = new AnalyticsCounter();
+		analyticsCounter.launch_pg("Project02Eclipse/symptoms.txt");
 
 	}
 }
