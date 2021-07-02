@@ -35,7 +35,7 @@ public class WriteSymptomFromData implements ISymptomWriter {
 			writer = new BufferedWriter(fw);
 
 			/* Display header */
-			writer.write(" The symptoms present are " + "\n");
+			writer.write("The symptoms present are : " + "\n");
 
 			/* Display result */
 			for (String key : mapSymptom.keySet()) {
