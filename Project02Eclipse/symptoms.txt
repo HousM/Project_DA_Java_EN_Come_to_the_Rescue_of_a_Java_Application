@@ -77,6 +77,7 @@ arrhythmias
 fever
 constricted pupils
 cough
+COVID
 stiff neck
 inflamation
 blurred vision
@@ -98,3 +99,4 @@ anxiety
 anxiety
 cough
 blurred vision
+test_vide2

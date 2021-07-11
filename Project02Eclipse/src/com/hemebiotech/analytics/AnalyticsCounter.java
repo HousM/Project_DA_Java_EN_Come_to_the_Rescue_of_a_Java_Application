@@ -38,6 +38,7 @@ public class AnalyticsCounter {
 	}
 
 	// Count and tree occurrence
+	// test
 	private Map<String, Integer> mapCountTree() {
 
 		for (String symptom : listSymptoms) {
@@ -57,7 +58,7 @@ public class AnalyticsCounter {
 	// Writing and displaying result of analyze...
 	private void writeResult() {
 		WriteSymptomFromData writerSymptom = new WriteSymptomFromData();
-		writerSymptom.writeResult(mapCount, listSymptoms);
+		writerSymptom.writeResult(mapCount);
 	}
 
 }

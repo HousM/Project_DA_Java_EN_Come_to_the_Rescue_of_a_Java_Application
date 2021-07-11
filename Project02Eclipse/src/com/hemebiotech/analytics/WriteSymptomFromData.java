@@ -3,7 +3,6 @@ package com.hemebiotech.analytics;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
-import java.util.List;
 import java.util.Map;
 
 public class WriteSymptomFromData implements ISymptomWriter {
@@ -18,7 +17,7 @@ public class WriteSymptomFromData implements ISymptomWriter {
 	 * @return result.out : display of occurrence symptom in alphabetical order
 	 */
 
-	public void writeResult(Map<String, Integer> mapSymptom, List<String> symptoms) {
+	public void writeResult(Map<String, Integer> mapSymptom) {
 		FileWriter fw = null;
 		BufferedWriter writer = null;
 
@@ -42,7 +41,6 @@ public class WriteSymptomFromData implements ISymptomWriter {
 				System.out.println(key + " = " + mapSymptom.get(key)); // Display in Console
 				writer.write(key + " = " + mapSymptom.get(key) + "\n"); // Display in txtFile
 			}
-			writer.close();
 
 			/*
 			 * Prints the stack trace of the System.err instance ( useful for diagnosing
