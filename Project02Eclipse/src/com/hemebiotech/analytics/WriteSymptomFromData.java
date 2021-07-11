@@ -8,7 +8,6 @@ import java.util.Map;
 public class WriteSymptomFromData implements ISymptomWriter {
 
 	/**
-	 * 
 	 *
 	 * Writing of symptoms in alphabetical order
 	 * 
@@ -23,7 +22,7 @@ public class WriteSymptomFromData implements ISymptomWriter {
 
 		try {
 
-			File resultOut = new File("result.txt");
+			File resultOut = new File("result.out");
 
 			/* create the file if it doesn't exist */
 			if (!resultOut.exists()) {

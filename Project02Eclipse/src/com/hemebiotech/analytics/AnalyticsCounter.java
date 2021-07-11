@@ -38,7 +38,6 @@ public class AnalyticsCounter {
 	}
 
 	// Count and tree occurrence
-	// test
 	private Map<String, Integer> mapCountTree() {
 
 		for (String symptom : listSymptoms) {
